@@ -11,16 +11,16 @@ st.title("Disease-free survival prediction after liver resection for hepatocellu
 st.write("### Input Data")
 col1, col2 = st.columns(2)
 
-Largest_nodule_diameter = col1.number_input("Size of the largest nodule", min_value=1, value= 10, placeholder="Size in millimetes")
-Satellite_nodules = col1.number_input("Satellite nodules", min_value=0, max_value=1, value=0, placeholder= "O or 1")
-VETC_subtype = col1.number_input("VETC subtype", min_value=0, max_value=1, value=0, placeholder= "O or 1")
-Macrotrabecular_massive_subtype = col2.number_input("Macrotrabecular massive subtype", min_value=0, max_value=1, value=0, placeholder= "O or 1")
-Microvascular_invasion = col2.number_input("Microvascular invasion", min_value=0, max_value=1, value=0, placeholder= "O or 1")
-BCLC_before_intervention = col1.number_input(    "BCLC before surgery (0, A=1, B=2, C=3)", min_value=0,max_value=3, value=0)
-Edmondson_Steiner_Grade = col1.number_input("Edmondson steiner grade (0=I, II=1, III=2, IV=3, V=4)", min_value=0, max_value=4, value=0)
-Number_of_tumors_on_the_specimen = col2.number_input("Number of tumors on the specimen", min_value=0, max_value=4, value=0, placeholder= "O ,1, 2, 3, or 4")
-Preop_AFP = col2.number_input("Preoperative AFP level", min_value=0.0, value=1.0)
-Hepatitis_Virus_B = col2.number_input("Hepatitis Virus B", min_value=0, max_value=1, value=0)
+Largest_nodule_diameter = col1.number_input("Size of the largest nodule in mm", min_value=1, value= 10, placeholder="Size in millimetes")
+Satellite_nodules = col1.number_input("Satellite nodules", min_value=0, max_value=1, value=0, placeholder= "0/1")
+VETC_subtype = col1.number_input("VETC subtype", min_value=0, max_value=1, value=0, placeholder= "0/1")
+Macrotrabecular_massive_subtype = col2.number_input("Macrotrabecular massive subtype", min_value=0, max_value=1, value=0, placeholder= "0/1")
+Microvascular_invasion = col2.number_input("Microvascular invasion", min_value=0, max_value=1, value=0, placeholder= "0/1")
+BCLC_before_intervention = col1.number_input(    "BCLC before surgery (0, A=1, B=2, C=3)", min_value=0,max_value=3, value=0, placeholder= "0-3")
+Edmondson_Steiner_Grade = col1.number_input("Edmondson steiner grade (0=I, II=1, III=2, IV=3, V=4)", min_value=0, max_value=4, value=0, placeholder= "0-4")
+Number_of_tumors_on_the_specimen = col2.number_input("Number of tumors on the specimen", min_value=0, max_value=4, value=0, placeholder= "0-4")
+Preop_AFP = col2.number_input("Preoperative AFP level (ng/ml)", min_value=0.0, value=1.0, placeholder= "AFP level (ng/ml)")
+Gender = col2.number_input("Gender (Female=0, Male=1)", min_value=0, max_value=1, value=0, placeholder= "0/1")
 
 df = pd.DataFrame(
     {
@@ -33,7 +33,7 @@ df = pd.DataFrame(
         "Macrotrabecular_massive_subtype": [Macrotrabecular_massive_subtype],
         "Edmondson_Steiner_Grade": [Edmondson_Steiner_Grade],
         "Number_of_tumors_on_the_specimen": [Number_of_tumors_on_the_specimen],
-        "HBV": [Hepatitis_Virus_B],
+        "Gender": [Gender],
     }
 )
 
