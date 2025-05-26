@@ -20,7 +20,6 @@ Edmondson_Steiner_Grade = col1.number_input("Edmondson steiner grade (0=I, II=1,
 Number_of_tumors_on_the_specimen = col2.number_input("Number of tumors on the specimen", min_value=0, max_value=4, value=0, placeholder= "0-4")
 Preop_AFP = col2.number_input("Preoperative AFP level (ng/ml)", min_value=0.0, value=1.0, placeholder="AFP level (ng/ml)")
 Gender = col2.number_input("Gender (F=0, M=1)", min_value=0, max_value=1, value=0, placeholder= "0/1")
-# AFP level (ng/ml)
 
 df = pd.DataFrame(
     {
