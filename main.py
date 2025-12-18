@@ -37,7 +37,7 @@ df = pd.DataFrame(
     }
 )
 
-train_data = pd.read_csv("hcc_dataset.csv")
+train_data = pd.read_csv("hcc_pre_postoperative.csv")
 X, y = get_x_y(train_data, ["DFS", "DFS_Delay"], pos_label=1)
 
 rsf = RandomSurvivalForest(n_estimators=250, max_depth=6, n_jobs=-1, random_state=20)
@@ -66,3 +66,4 @@ if st.button("Generate Plot"):
         y_label="Survival Probability",
         color=["#FF0000"],
     )
+
