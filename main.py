@@ -18,7 +18,7 @@ Surgical_margins = col2.number_input("Surgical margins", min_value=0, max_value=
 Microvascular_invasion = col2.number_input("Microvascular invasion", min_value=0, max_value=1, value=0, placeholder= "0/1")
 BCLC_before_intervention = col1.number_input("BCLC before surgery (0, A=1, B=2, C=3)", min_value=0,max_value=3, value=0, placeholder= "0-3")
 Edmondson_Steiner_Grade = col1.number_input("Edmondson steiner grade (0=I, II=1, III=2, IV=3, V=4)", min_value=0, max_value=4, value=0, placeholder= "0-4")
-Number_of_tumors_on_the_specimen = col2.number_input("Number of tumors on the specimen", min_value=1, max_value=10, value=1, placeholder= "1-50")
+Number_of_tumors_on_the_specimen = col2.number_input("Number of tumors on the specimen", min_value=1, max_value=50, value=1, placeholder= "1-50")
 Preop_AFP = col2.number_input("Preoperative AFP level (ng/ml)", min_value=0.0, value=1.0, placeholder= "AFP level (ng/ml)")
 Cirrhosis = col2.number_input("Cirrhosis", min_value=0, max_value=1, value=0, placeholder= "0/1")
 
@@ -65,6 +65,7 @@ if st.button("Generate Plot"):
         y_label="Survival Probability",
         color=["#FF0000"],
     )
+
 
 
 
