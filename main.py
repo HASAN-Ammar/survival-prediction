@@ -7,6 +7,11 @@ from sksurv.ensemble import RandomSurvivalForest
 
 
 st.title("Disease-free survival prediction after liver resection for hepatocellular carcinoma")
+st.info(
+    "⚠️ This tool provides **relative risk stratification** based on population-level models. "
+    "Predictions should **not** be interpreted as absolute decision thresholds for individual patient management. "
+    "Clinical decisions must be made within a multidisciplinary context."
+)
 
 st.write("### Input Data")
 col1, col2 = st.columns(2)
@@ -64,6 +69,12 @@ if st.button("Generate Plot"):
         x_label="Time in months",
         y_label="Survival Probability",
         color=["#FF0000"],
+    )
+
+    st.caption(
+        "Interpretation note: Predicted curves represent **relative disease-free survival risk** "
+        "and are intended for risk stratification and research purposes only. "
+        "They should not be used as absolute decision thresholds for individual patient management."
     )
 
 
