@@ -4,6 +4,7 @@ import numpy as np
 import pickle
 from sksurv.datasets import get_x_y
 from sksurv.ensemble import RandomSurvivalForest
+import altair as alt 
 
 
 st.title("Disease-Free Survival Prediction after Liver Resection for Hepatocellular Carcinoma")
@@ -60,27 +61,6 @@ d = pd.DataFrame(
         
     }
 )
-"""
-# Plot the survival curves
-if st.button("Generate Plot"):
-    st.subheader("Survival prediction using Random Survival Forest", divider=True)
-    st.line_chart(
-        data=d,
-        x="x_column",
-        #y=["RSF"],
-        y= "RSF",
-        #x_label="Time in months",
-        #y_label="Survival Probability",
-        #color=["#FF0000"],
-    )
-
-
-    st.caption(
-        "Interpretation note: Predicted curves represent **relative disease-free survival risk** "
-        "and are intended for risk stratification and research purposes only. "
-        "They should not be used as absolute decision thresholds for individual patient management."
-    )
-"""
 # Plot the survival curves
 if st.button("Generate Plot"):
     st.subheader("Survival prediction using Random Survival Forest", divider=True)
@@ -97,6 +77,7 @@ if st.button("Generate Plot"):
         "and are intended for risk stratification and research purposes only. "
         "They should not be used as absolute decision thresholds for individual patient management."
     )
+
 
 
 
