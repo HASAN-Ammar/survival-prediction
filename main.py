@@ -60,6 +60,7 @@ d = pd.DataFrame(
         
     }
 )
+"""
 # Plot the survival curves
 if st.button("Generate Plot"):
     st.subheader("Survival prediction using Random Survival Forest", divider=True)
@@ -73,6 +74,23 @@ if st.button("Generate Plot"):
         #color=["#FF0000"],
     )
 
+
+    st.caption(
+        "Interpretation note: Predicted curves represent **relative disease-free survival risk** "
+        "and are intended for risk stratification and research purposes only. "
+        "They should not be used as absolute decision thresholds for individual patient management."
+    )
+"""
+# Plot the survival curves
+if st.button("Generate Plot"):
+    st.subheader("Survival prediction using Random Survival Forest", divider=True)
+
+    chart = alt.Chart(d).mark_line(color="red").encode(
+        x=alt.X("x_column:Q", title="Time in months"),
+        y=alt.Y("RSF:Q", title="Survival Probability"),
+    )
+
+    st.altair_chart(chart, use_container_width=True)
 
     st.caption(
         "Interpretation note: Predicted curves represent **relative disease-free survival risk** "
