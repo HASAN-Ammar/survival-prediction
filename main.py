@@ -69,13 +69,13 @@ if st.button("Generate Plot"):
         y=["RSF"],
         x_label="Time in months",
         y_label="Survival Probability",
-        #color=["#FF0000"],
     )
     st.caption(
         "Interpretation note: Predicted curves represent **relative disease-free survival risk** "
         "and are intended for risk stratification and research purposes only. "
         "They should not be used as absolute decision thresholds for individual patient management."
     )
+
 
 
 
