@@ -66,10 +66,14 @@ if st.button("Generate Plot"):
     st.line_chart(
         data=d,
         x="x_column",
-        y=["RSF"],
-        x_label="Time in months",
-        y_label="Survival Probability",
+        #y=["RSF"],
+        y= "RSF",
+        #x_label="Time in months",
+        #y_label="Survival Probability",
+        #color=["#FF0000"],
     )
+
+
     st.caption(
         "Interpretation note: Predicted curves represent **relative disease-free survival risk** "
         "and are intended for risk stratification and research purposes only. "
